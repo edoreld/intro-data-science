@@ -90,6 +90,31 @@ One option to compare performance is to use the time command.
 
 Another option is to look at the output from the hadoop command. For example, we can take a look at the number of input records for the reducer. We can also see how many bytes were written.
 
+6.
+
+ -> R2:
+mapper62.py
+reducer62.py
+
+The more efficient version will group the results in a combiner
+
+mapper62x.py
+reducer62x.py
+combiner62x.py
+
+ -> R3:
+ mapper63.py
+ reducer63.py
+
+ To improve the program, we would add the sorting logic to a combiner
+
+ -> R4:
+  mapper63.py
+  reducer part -> in progress
+
+
+
+
 
 
 
