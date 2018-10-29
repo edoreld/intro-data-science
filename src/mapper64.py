@@ -8,6 +8,11 @@ total = '_'
 
 # input comes from STDIN (standard input)
 for line in sys.stdin:
+
+    custID = ''
+    name = '-'
+    total = '-'
+
     # remove leading and trailing whitespace
     words = line.strip().split(',')
 
@@ -15,7 +20,7 @@ for line in sys.stdin:
         # Customers table
         custID = words[0]
         name = words[2]
-    else:
+    elif len(words) == 2:
         # Orders table
         custID = words[0]
         total = words[1]

@@ -2,20 +2,48 @@
 
 import sys
 
+current_cust_ID = None
+current_total = 0
+current_name = None
+
 # input comes from STDIN
 for line in sys.stdin:
 
-    data = line.split('\t')
+    # 1001  SNOW GEORGE -
+    # 1001 -   1285
 
-    fields = data[1].split(',')
-    # print('{}'.format(fields))
+    custID, name, total = line.rstrip('\n').split('\t')
 
-    # print('{}'.format(fields))
-    name = fields[0]
-    mID = fields[1]
-    date = fields[2]
+    if total != "-":
+            total = int(total)
 
-    print('{}'.format(mID),end=' ')
-    print('{}'.format(name), end=' ')
-    print('{}'.format(date), end=' ')
+    if not current_cust_ID:
+        current_cust_ID = custID
+
+
+
+    if current_cust_ID == custID:
+        if name != "-":
+            current_name = name
+        if total != "-":
+            current_total += total
+    else:
+        if current_name != '-':
+            print('{}\t{}'.format(current_name, current_total))
+        current_cust_ID = custID
+        if total != '-':
+            current_total = total
+        else:
+            current_total = 0
+        if name != '-':
+            current_name = name
+        else:
+            current_name = '-'
+
+if current_name != '-':
+    print('{}\t{}'.format(current_name, current_total))
+
+    # print('{}'.format(mID),end=' ')
+    # print('{}'.format(name), end=' ')
+    # print('{}'.format(date), end=' ')
 
