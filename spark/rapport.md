@@ -16,7 +16,9 @@ Take returns a list of strings, where each string corresponds to one line in the
 
 First returns a string corresponding to the first line.
 
-### 5. 2420766 lines.
+### 5. 
+
+2420766 lines.
 
 2420766 people that follow other people on Twitter.
 
