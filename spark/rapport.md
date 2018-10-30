@@ -10,7 +10,9 @@ wordCounts.sortBy(lambda x: x[1], ascending=False).take(50)
 
 ## Exercise 2
 
-### 4. Take returns a list of strings, where each string corresponds to one line in the file.
+### 4. 
+
+Take returns a list of strings, where each string corresponds to one line in the file.
 
 First returns a string corresponding to the first line.
 
@@ -18,7 +20,9 @@ First returns a string corresponding to the first line.
 
 2420766 people that follow other people on Twitter.
 
-### 6. In exercice part we determined that the results are returned as strings. It would be better if they were lists so that we can access each ID individually. We can achieve this using split()
+### 6. 
+
+In exercice part we determined that the results are returned as strings. It would be better if they were lists so that we can access each ID individually. We can achieve this using split()
 
 ### 7.
 ```python
@@ -77,7 +81,9 @@ twitProbs = distrange.map(lambda n : (n, len([x for x in bcInDegree.value if x[1
 twitProbs.map(lambda row: str(row[0]) + "," + str(row[1])).saveAsTextFile("outputfolder")
 ```
 
-### 5. The part files correspond to each of the tasks writing their output to their own file.
+### 5. 
+
+The part files correspond to each of the tasks writing their output to their own file.
 
 How would it work if the output was just one file? In this case, all tasks would try to write to the same file in the HDFS, which means there would be a number of locks on the file to ensure integrity. This would diminish performance.
 
