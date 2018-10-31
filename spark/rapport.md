@@ -70,8 +70,7 @@ We export indegree as a broadcast variable
 ```py
 bcInDegree = sc.broadcast(indegree.collect())
 
-# We need to broadcast the indegree list and then parallelize it so that we can use RDD methods
-# on it
+# We need to broadcast the indegree list
 
 twitProbs = distrange.map(lambda n : (n, len([x for x in bcInDegree.value if x[1] > n]) / len(bcInDegree.value)))
 
